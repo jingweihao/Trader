@@ -1,0 +1,22 @@
+#mycontainer{
+	padding: 100px 150px 100px 150px;
+}
+
+#searchresult{
+	margin-top:70px;
+}
+
+#sales_items{
+	margin-top:70px;
+}
+
+img{
+	max-width: 220px;
+	max-height: 220px;
+	vertical-align: text-top;
+}
+
+h2{
+	font-weight: bold;
+}
+

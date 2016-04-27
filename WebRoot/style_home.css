@@ -1,0 +1,23 @@
+#Ant{
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 150px;
+}
+
+#Personal{
+    position: fixed;
+    top: 20px;
+    right: 150px;
+}
+
+#Logout{
+	position: fixed;
+	top: 20px;
+	right: 40px;
+}
+/*
+#Searchbox{
+	position: fixed;
+	top: 300px;
+	left: 10px;
+}*/

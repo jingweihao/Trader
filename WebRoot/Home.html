@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+	
+    <link rel="stylesheet" type="text/css" href="style_home.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="docs.min.css" />    
+
+  </head>
+  
+  <body>
+     <nav class = "navbar navbar-default navbar-fixed-top" role = "navigation">
+        <div class = "container-fluid">
+            <div class = "navbar-header">
+	            <a class = "navbar-brand" href = "#">Trader</a>
+	        </div>
+	        <div>
+	            <ul class = "nav navbar-nav navbar-right">
+	               <li class = "active"><a href = "#">Home</a></li>
+	               <li><a href = "#" >Personal</a></li>
+	               <li><a href = "#" class = "navbar-link">Log out</a></li>        
+	            </ul>
+	        
+	        </div>
+        </div>        
+     </nav> 
+     <div class = "bs-docs-header" id = "content" tabindex = "-1">
+        <div class = "container">
+            <h1>Buy</h1>
+        </div>        
+     </div>
+     
+<!--      <img alt="Anteater" src="anteater.png" id = "Ant" />
+    <form action="PersonalAction" method = "GET">
+        <input class = "btn btn-large btn-primary" type = "button" value = "Personal" id = "Personal" >
+        <input class = "btn btn-large" type = "button" value = "Logout" id = "Logout" >
+    </form> -->
+    
+    
+    <form action="SearchAction" method = "GET">
+    <div class = "row">
+        <div class = "col-md-6 col-md-offset-3">
+	        <div class = "input-group" id = "Searchbox">
+	             <input class = "form-control" id = "Querybox" type = "text" name = "text" >
+	             <span class = "input-group-btn">
+	                 <input class = "btn btn-primary" type = "submit" value = "Search" >
+	             </span>           
+	        </div>
+        </div>
+    </div>
+    </form>
+    
+  </body>
+</html>
