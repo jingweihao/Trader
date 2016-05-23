@@ -5,8 +5,8 @@ import java.util.*;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
 import com.data.Sales;
+import com.getService.Service;
 import com.opensymphony.xwork2.Action;
-import com.service.PersonalSales;
 
 public class LoginAction implements Action {
 
@@ -64,13 +64,15 @@ public class LoginAction implements Action {
 //		Object[] result = c.invoke(opname, "XiaoFeng DaShen");
 //		System.out.println(result[0]);
 
-		String url = "http://localhost:8080/TraderService/PS";
-		JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
-		factory.setServiceClass(PersonalSales.class);
-		factory.setAddress(url);
-		PersonalSales ps = (PersonalSales)factory.create();
-		list = ps.getSales(username);
+//		String url = "http://localhost:8080/TraderService/PS";
+//		JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
+//		factory.setServiceClass(PersonalSales.class);
+//		factory.setAddress(url);
+//		PersonalSales ps = (PersonalSales)factory.create();
+//		list = ps.getSales(username);
 		
+		Service s = Service.getInstance();
+		list = s.get_Sales(username);
 		
 		return "success";
 	}

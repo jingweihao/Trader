@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:clustering="http://cxf.apache.org/clustering"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+ 
+<!--   <bean id = "Addresses" class = "com.service.AddressList">
+             <property name="addresses">
+                  <list>
+        		     <value>http://localhost:8010/TraderService/S</value>
+                  </list>
+             </property>
+       </bean>
+--> 
+       
+       <jaxws:client id="balancer_service"
+              serviceClass="com.getService.GetService"
+              address="http://localhost:8080/TraderBalancer/balancer">
+	    <jaxws:features>
+	        <clustering:failover>
+	            <clustering:strategy>
+	                <bean class="org.apache.cxf.clustering.RandomStrategy">
+	                    <property name="alternateAddresses">
+	                        <util:list>
+	                            <value>http://localhost:8080/TraderService/BackUpBalancer</value>
+	                            <value>http://localhost:8010/TraderService/BackUpBalancer</value>
+	                        </util:list>
+	                    </property>
+	                </bean>
+	            </clustering:strategy>
+	        </clustering:failover>
+	    </jaxws:features>
+	    	
+	    </jaxws:client>
+       
+</beans>
