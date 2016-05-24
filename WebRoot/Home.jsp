@@ -1,3 +1,4 @@
+<%@taglib prefix = "S" uri = "/struts-tags" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,9 +18,9 @@
 	        </div>
 	        <div>
 	            <ul class = "nav navbar-nav navbar-right">
-	               <li class = "active"><a href = "#">Home</a></li>
-	               <li><a href = "#" >Personal</a></li>
-	               <li><a href = "#" class = "navbar-link">Log out</a></li>        
+	               <li class = "active"><a href = "Home.jsp">Home</a></li>
+	               <li><a href = "Personal.jsp" >Personal</a></li>
+	               <li><a href = "login.jsp" class = "navbar-link">Log out</a></li>        
 	            </ul>
 	        
 	        </div>
@@ -38,18 +39,18 @@
     </form> -->
     
     
-    <form action="SearchAction" method = "GET">
+    <S:form action="SearchAction" method = "GET" namespace = "/">
     <div class = "row">
         <div class = "col-md-6 col-md-offset-3">
 	        <div class = "input-group" id = "Searchbox">
-	             <input class = "form-control" id = "Querybox" type = "text" name = "text" >
+	             <S:textfield cssClass = "form-control" id = "Querybox" name = "searchword" />
 	             <span class = "input-group-btn">
-	                 <input class = "btn btn-primary" type = "submit" value = "Search" >
+	                 <S:submit cssClass = "btn btn-primary" value = "Search" />
 	             </span>           
 	        </div>
         </div>
     </div>
-    </form>
+    </S:form>
     
   </body>
 </html>

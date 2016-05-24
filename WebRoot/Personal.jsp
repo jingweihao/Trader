@@ -20,9 +20,9 @@
 	        <div>
 	            
 	            <ul class = "nav navbar-nav navbar-right">
-	               <li><a href = "#">Home</a></li>
-	               <li class = "active"><a href = "#" >Personal</a></li>
-	               <li><a href = "#" class = "navbar-link">Log out</a></li>        
+	               <li><a href = "Home.jsp">Home</a></li>
+	               <li class = "active"><a href = "Personal.jsp" >Personal</a></li>
+	               <li><a href = "login.jsp" class = "navbar-link">Log out</a></li>        
 	            </ul>
 	            <S:form cssClass = "navbar-form navbar-right" role = "search" action="SearchAction" namespace = "/">
 	            <div class = "form-group">
@@ -37,19 +37,20 @@
      
      
      <div class = "container-fluid" id = "mycontainer"> 
-        <S:iterator value = "list" var = "cur">  
+        <S:iterator value = "#session">  
              <div id = "sales_items" class = "row">
              
                  <div class = "col-md-3">
-                      <img src= " <S:property value="#cur.img"  />  ">
+                      <img src= " <S:property value="value.img"  />  ">
 	             </div>
 	             <div class = "col-md-6">
-	                   <h2> <S:property value="#cur.name"  />  </h2>
-	                   <h4> <S:property value="#cur.price"  /> </h4>
-	                   <p> <S:property value="#cur.info"  /> </p>
+	                   <h2> <S:property value="value.name"  />  </h2>
+	                   <h4> <S:property value="value.price"  /> </h4>
+	                   <p> <S:property value="value.info"  /> </p>
 	             </div>
 	             <div class = "col-md-3">
-	                   <button type = "button" class = "btn btn-default"> Sold </button>
+	                   <S:a href = "SoldAction.action?itemid=%{key}" cssClass = "btn btn-default"> Sold </S:a>
+	                   <!-- <button type = "button" class = "btn btn-default"> Sold </button>  -->
 	             </div>
              
             </div>

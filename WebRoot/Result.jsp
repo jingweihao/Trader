@@ -20,9 +20,9 @@
 	        <div>
 	            
 	            <ul class = "nav navbar-nav navbar-right">
-	               <li class = "active"><a href = "#">Home</a></li>
-	               <li><a href = "#" >Personal</a></li>
-	               <li><a href = "#" class = "navbar-link">Log out</a></li>        
+	               <li class = "active"><a href = "Home.jsp">Home</a></li>
+	               <li><a href = "Personal.jsp" >Personal</a></li>
+	               <li><a href = "login.jsp" class = "navbar-link">Log out</a></li>        
 	            </ul>
 	            <S:form cssClass = "navbar-form navbar-right" role = "search" action="SearchAction" namespace = "/">
 	            <div class = "form-group">
