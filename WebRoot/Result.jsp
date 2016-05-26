@@ -40,7 +40,7 @@
              <div id = "searchresult" class = "row">
              
                  <div class = "col-md-3">
-                      <img src= " <S:property value="#cur.img"  />  ">
+                      <img src= " <S:property value="#cur.imgpath"  />  ">
 	             </div>
 	             <div class = "col-md-6">
 	                   <h2> <S:property value="#cur.name"  />  </h2>

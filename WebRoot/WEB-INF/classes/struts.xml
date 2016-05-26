@@ -17,7 +17,9 @@
       <action name = "SoldAction" class = "com.action.SoldAction">
           <result name = "success">/Personal.jsp</result>      
       </action>
-      
+      <action name = "AddItemAction" class = "com.action.AddItemAction">
+          <result name = "success">/Personal.jsp</result>      
+      </action>
       </package>
 
 </struts>    

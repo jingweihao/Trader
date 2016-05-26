@@ -41,7 +41,7 @@
              <div id = "sales_items" class = "row">
              
                  <div class = "col-md-3">
-                      <img src= " <S:property value="value.img"  />  ">
+                      <img src= " <S:property value="value.imgpath"  />  ">
 	             </div>
 	             <div class = "col-md-6">
 	                   <h2> <S:property value="value.name"  />  </h2>
@@ -60,7 +60,32 @@
      
      </div>
    
-      
+     <div class = "container-fluid" id = "add_item_c">
+	     <S:form role = "additem" action="AddItemAction" enctype = "multipart/form-data" method = "POST" namespace = "/">
+	        <div class = "form-group">
+	            <S:label for = "salesitem.name" value = "Name"/>
+	            <S:textfield name="salesitem.name" cssClass="form-control" placeholder="ItemName"/>
+	        </div>
+	        <div class = "form-group">
+	            <S:label for = "salesitem.price" value = "Price"/>
+	            <S:textfield name="salesitem.price" cssClass="form-control" placeholder="ItemPrice"/>
+	        </div>
+	        <div class = "form-group">
+	            <S:label for = "salesitem.category" value = "Category"/>
+	            <S:select name="salesitem.category" list= "#{'Bicycle':'Bicycle', 'Book':'Book', 'Car':'Car', 'Computer':'Computer', 'Home':'Home', 'House':'House', 'Sports':'Sports', 'Supplies':'Supplies', 'Video&Video Games':'Video&Video Games'}" headerKey="-1" headerValue="Select"/>
+	        </div>
+	        <div class = "form-group">
+	            <S:label for = "file" value = "Img Input"/>
+	            <S:file name = "file"/>
+	        </div>
+	        <div class = "form-group">
+	            <S:label for = "salesitem.info" value = "Detail"/>
+	            <S:textarea name = "salesitem.info" cssClass="form-control" placeholder = "ItemDetail"/>
+	        </div>
+	        <S:submit cssClass = "form-control btn btn-default" value = "Submit"/>
+	     </S:form>
+		          
+     </div>
       
   </body>
 </html>

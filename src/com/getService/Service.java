@@ -8,10 +8,10 @@ import com.data.SearchResult;
 public class Service 
 {	
 	private GetService gs;
-	private ClassPathXmlApplicationContext context;
+	private ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"com/getService/BalancerList.xml"});
+	
 	private Service()
 	{
-		context = new ClassPathXmlApplicationContext(new String[]{"com/getService/BalancerList.xml"});
 		gs = (GetService)context.getBean("balancer_service");
 		System.out.println("Initializing~~~~~~~~~");
 	}
@@ -34,6 +34,18 @@ public class Service
 	{
 		System.out.println("Get_Sales~~~~~~~~~");
 		return gs.SalesService(username);
+	}
+	
+	public String get_AddItem(Sales sales)
+	{
+		System.out.println("Get_AddItem~~~~~~~~");
+		return gs.AddItemService(sales);
+	}
+	
+	public boolean get_DeleteItem(String itemid)
+	{
+		System.out.println("Get_DeleteItem~~~~~~~~~");
+		return gs.DeleteItemService(itemid);
 	}
 	
 }

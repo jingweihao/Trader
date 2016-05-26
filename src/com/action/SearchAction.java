@@ -1,10 +1,6 @@
 package com.action;
 
 import java.util.*;
-
-import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import com.data.SearchResult;
 import com.getService.Service;
 import com.opensymphony.xwork2.Action;
@@ -57,9 +53,7 @@ public class SearchAction implements Action
 //		Search search = s.getService();
 		Service s = Service.getInstance();
 		searchlist = s.get_Search(searchword);			
-		
-		
-				
+						
 		return "success";
 	}
 

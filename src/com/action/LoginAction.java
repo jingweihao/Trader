@@ -2,7 +2,6 @@ package com.action;
 
 import java.util.*;
 import org.apache.struts2.interceptor.SessionAware;
-
 import com.data.Sales;
 import com.getService.Service;
 import com.opensymphony.xwork2.Action;
@@ -52,6 +51,6 @@ public class LoginAction implements Action, SessionAware
 		
 		return "success";
 	}
-	
+
 	
 }
