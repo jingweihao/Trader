@@ -1,37 +1,36 @@
 package com.action;
 
+import com.data.User;
+import com.getService.Service;
 import com.opensymphony.xwork2.Action;
 
 public class RegisterAction implements Action 
 {
-	private String username;
-	private String tel;
-	private String password;
-	private String confirmpassword;
+    private User user;
+    
+    public void setUser(User user)
+    {
+    	this.user = user;
+    }
+    
+    public User getUser()
+    {
+    	return user;
+    }
 	
-	public void setUsername(String username)
+	public String execute() throws Exception 
 	{
-		this.username = username;
-	}
-	
-	public void setTel(String tel)
-	{
-		this.tel = tel;
-	}
-	
-	public void setPassword(String password)
-	{
-		this.password = password;
-	}
-	
-	public void setConfirmPassword(String confirmpassword)
-	{
-		this.confirmpassword = confirmpassword;
-	}
-	
-	public String execute() throws Exception {
 		
-		return null;
+		boolean flag = Service.getInstance().get_Register(getUser());
+		if(!flag)
+		{
+			System.out.println("Register fails!");
+			return "error";
+		}
+		
+		System.out.println("Register Successfully!");
+		
+		return "success";
 	}
 
 }

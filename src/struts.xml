@@ -12,7 +12,7 @@
       </action>
       <action name = "LoginAction" class = "com.action.LoginAction">
           <result name = "success">/Home.jsp</result>
-      
+          <result name = "error">/login.jsp</result>
       </action>
       <action name = "SoldAction" class = "com.action.SoldAction">
           <result name = "success">/Personal.jsp</result>      
@@ -20,6 +20,11 @@
       <action name = "AddItemAction" class = "com.action.AddItemAction">
           <result name = "success">/Personal.jsp</result>      
       </action>
+      <action name = "RegisterAction" class = "com.action.RegisterAction">
+          <result name = "success">/login.jsp</result>
+          <result name = "error">/login.jsp</result>
+      </action>
+      
       </package>
 
 </struts>    

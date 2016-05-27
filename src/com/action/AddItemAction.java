@@ -9,6 +9,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import org.apache.struts2.util.ServletContextAware;
 
 import com.data.Sales;
+import com.data.User;
 import com.getService.Service;
 import com.opensymphony.xwork2.Action;
 
@@ -57,6 +58,10 @@ public class AddItemAction implements Action, SessionAware, ServletContextAware
 		System.out.println(downloadimg);
 		Image.base64ToImage(imgstr, downloadimg);
 		salesitem.setImgpath("img/" + fileFileName);
+		User user = (User)sessionmap.get(".user");
+		salesitem.setSellername(user.getUsername());
+		salesitem.setSellertel(user.getTel());
+		
 		String id_return = Service.getInstance().get_AddItem(salesitem);
 		salesitem.setId(id_return);
 		System.out.println("Successfully Add Item: " + salesitem);

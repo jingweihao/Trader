@@ -1,9 +1,12 @@
 package com.getService;
 
 import java.util.*;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.data.Sales;
 import com.data.SearchResult;
+import com.data.User;
 
 public class Service 
 {	
@@ -46,6 +49,18 @@ public class Service
 	{
 		System.out.println("Get_DeleteItem~~~~~~~~~");
 		return gs.DeleteItemService(itemid);
+	}
+	
+	public User get_Verify(User user)
+	{
+		System.out.println("Get_Verify~~~~~~~~~");
+		return gs.VerifyService(user);
+	}
+	
+	public boolean get_Register(User user)
+	{
+		System.out.println("Get_Register~~~~~~~~~");
+		return gs.RegisterService(user);
 	}
 	
 }

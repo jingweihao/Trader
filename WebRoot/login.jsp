@@ -33,12 +33,12 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<S:form id="login-form" action="LoginAction" method="get" role="form" cssStyle="display: block;" namespace = "/">
+								<S:form id="login-form" action="LoginAction" method="post" role="form" cssStyle="display: block;" namespace = "/">
 									<div class="form-group">
-										<S:textfield name="username" tabindex="1" cssClass="form-control" placeholder="Username" value=""/>
+										<S:textfield name="user.username" tabindex="1" cssClass="form-control" placeholder="Username" value=""/>
 									</div>
 									<div class="form-group">
-										<S:password name="password" tabindex="2" cssClass="form-control" placeholder="Password"/>
+										<S:password name="user.password" tabindex="2" cssClass="form-control" placeholder="Password"/>
 									</div>
 									<div class="form-group">
 										<div class="row">
@@ -48,18 +48,18 @@
 										</div>
 									</div>
 								</S:form>
-								<S:form id="register-form" action="RegisterAction" method="get" role="form" cssStyle="display: none;" namespace = "/">
+								<S:form id="register-form" action="RegisterAction" method="post" role="form" cssStyle="display: none;" namespace = "/">
 									<div class="form-group">
-										<S:textfield name="username" tabindex="1" cssClass="form-control" placeholder="Username" value=""/>
+										<S:textfield name="user.username" tabindex="1" cssClass="form-control" placeholder="Username" value=""/>
 									</div>
 									<div class="form-group">
-										<S:textfield name="tel" tabindex="1" cssClass="form-control" placeholder="Telephone Number" value=""/>
+										<S:textfield name="user.tel" tabindex="1" cssClass="form-control" placeholder="Telephone Number" value=""/>
 									</div>
 									<div class="form-group">
-										<S:password name="password" tabindex="2" cssClass="form-control" placeholder="Password"/>
+										<S:password name="user.password" tabindex="2" cssClass="form-control" placeholder="Password"/>
 									</div>
 									<div class="form-group">
-										<S:password name="confirmpassword" tabindex="2" cssClass="form-control" placeholder="Confirm Password"/>
+										<S:password name="user.confirmpassword" tabindex="2" cssClass="form-control" placeholder="Confirm Password"/>
 									</div>
 									<div class="form-group">
 										<div class="row">
