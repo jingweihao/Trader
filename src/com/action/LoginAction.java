@@ -47,6 +47,7 @@ public class LoginAction implements Action, SessionAware
 		
 		sessionmap.put(".user", getUser());
 		ArrayList<Sales> list = s.get_Sales(user.getUsername());
+
 		for(Sales item : list)
 		{
 			sessionmap.put(item.getId(), item);

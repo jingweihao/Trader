@@ -37,24 +37,26 @@
      
      
      <div class = "container-fluid" id = "mycontainer"> 
-        <S:iterator value = "#session">  
-             <div id = "sales_items" class = "row">
-             
-                 <div class = "col-md-3">
-                      <img src= " <S:property value="value.imgpath"  />  ">
-	             </div>
-	             <div class = "col-md-6">
-	                   <h2> <S:property value="value.name"  />  </h2>
-	                   <h4> <S:property value="value.price"  /> </h4>
-	                   <p> <S:property value="value.info"  /> </p>
-	             </div>
-	             <div class = "col-md-3">
-	                   <S:a href = "SoldAction.action?itemid=%{key}" cssClass = "btn btn-default"> Sold </S:a>
-	                   <!-- <button type = "button" class = "btn btn-default"> Sold </button>  -->
-	             </div>
-             
-            </div>
-            <hr>
+        <S:iterator value = "#session">
+             <S:if test= "key != '.user'">  
+	             <div id = "sales_items" class = "row">
+	             
+	                 <div class = "col-md-3">
+	                      <img src= " <S:property value="value.imgpath"  />  ">
+		             </div>
+		             <div class = "col-md-6">
+		                   <h2> <S:property value="value.name"  />  </h2>
+		                   <h4> <S:property value="value.price"  /> </h4>
+		                   <p> <S:property value="value.info"  /> </p>
+		             </div>
+		             <div class = "col-md-3">
+		                   <S:a href = "SoldAction.action?itemid=%{key}" cssClass = "btn btn-default"> Sold </S:a>
+		                   <!-- <button type = "button" class = "btn btn-default"> Sold </button>  -->
+		             </div>
+	             
+	            </div>
+	            <hr>
+            </S:if>
         </S:iterator>
                          
      

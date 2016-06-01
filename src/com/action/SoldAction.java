@@ -1,9 +1,8 @@
 package com.action;
 
-import java.util.Map;
+import java.util.*;
 
 import org.apache.struts2.interceptor.SessionAware;
-
 import com.getService.Service;
 import com.opensymphony.xwork2.Action;
 
