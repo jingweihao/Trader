@@ -45,10 +45,10 @@ public class Service
 		return gs.AddItemService(sales);
 	}
 	
-	public boolean get_DeleteItem(String itemid)
+	public boolean get_DeleteItem(String category, String itemname, String itemid)
 	{
 		System.out.println("Get_DeleteItem~~~~~~~~~");
-		return gs.DeleteItemService(itemid);
+		return gs.DeleteItemService(category, itemname, itemid);
 	}
 	
 	public User get_Verify(User user)

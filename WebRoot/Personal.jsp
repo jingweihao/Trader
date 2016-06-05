@@ -50,7 +50,7 @@
 		                   <p> <S:property value="value.info"  /> </p>
 		             </div>
 		             <div class = "col-md-3">
-		                   <S:a href = "SoldAction.action?itemid=%{key}" cssClass = "btn btn-default"> Sold </S:a>
+		                   <S:a href = "SoldAction.action?itemid=%{key}&category=%{value.category}&itemname=%{value.name}" cssClass = "btn btn-default"> Sold </S:a>
 		                   <!-- <button type = "button" class = "btn btn-default"> Sold </button>  -->
 		             </div>
 	             

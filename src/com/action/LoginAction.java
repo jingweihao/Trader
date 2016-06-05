@@ -48,10 +48,22 @@ public class LoginAction implements Action, SessionAware
 		sessionmap.put(".user", getUser());
 		ArrayList<Sales> list = s.get_Sales(user.getUsername());
 
-		for(Sales item : list)
+		if(list == null)
+			System.out.println("null~~~~~~~~~~~~");
+		else if(list.isEmpty())
+			System.out.println("Empty~~~~~~~~~~~");
+		else
+			System.out.println("has something!");
+		
+		if(list != null)
 		{
-			sessionmap.put(item.getId(), item);
+			for(Sales item : list)
+			{
+				System.out.println("itttem!!!!");
+				sessionmap.put(item.getId(), item);
+			}
 		}
+
 		
 		return "success";
 	}
