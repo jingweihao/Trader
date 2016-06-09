@@ -74,7 +74,7 @@
 	        </div>
 	        <div class = "form-group">
 	            <S:label for = "salesitem.category" value = "Category"/>
-	            <S:select name="salesitem.category" list= "#{'Bicycle':'Bicycle', 'Book':'Book', 'Car':'Car', 'Computer':'Computer', 'Home':'Home', 'House':'House', 'Sports':'Sports', 'Supplies':'Supplies', 'Video&Video Games':'Video&Video Games'}" headerKey="-1" headerValue="Select"/>
+	            <S:select name="salesitem.category" list= "#{'Bicycle':'Bicycle', 'Book':'Book', 'Car':'Car', 'Computer':'Computer', 'Home':'Home', 'House':'House', 'Sports':'Sports', 'Supplies':'Supplies', 'Video':'Video'}" headerKey="-1" headerValue="Select"/>
 	        </div>
 	        <div class = "form-group">
 	            <S:label for = "file" value = "Img Input"/>

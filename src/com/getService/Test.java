@@ -43,13 +43,47 @@ public class Test
 		else
 		{
 			long before = System.currentTimeMillis();
-			new Thread(new UserThread("A1")).start();
-			new Thread(new UserThread("B1")).start();
-			//new Thread(new UserThread("A2")).start();
-			//new Thread(new UserThread("B2")).start();
-			//new Thread(new UserThread("A3")).start();
-			//new Thread(new UserThread("B3")).start();
-			//new Thread(new UserThread("A4")).start();
+			new Thread(new UserThread("A1", 1)).start();
+			new Thread(new UserThread("B1", 1)).start();
+			new Thread(new UserThread("C1", 1)).start();
+
+			new Thread(new UserThread("A2", 2)).start();
+			new Thread(new UserThread("B2", 2)).start();
+			new Thread(new UserThread("C2", 2)).start();
+
+			new Thread(new UserThread("A3", 3)).start();
+			new Thread(new UserThread("B3", 3)).start();
+			new Thread(new UserThread("C3", 3)).start();
+
+			new Thread(new UserThread("A4", 4)).start();
+			new Thread(new UserThread("B4", 4)).start();
+			new Thread(new UserThread("C4", 4)).start();
+			
+			new Thread(new UserThread("A5", 5)).start();
+			new Thread(new UserThread("B5", 5)).start();
+			new Thread(new UserThread("C5", 5)).start();
+
+			new Thread(new UserThread("A6", 6)).start();
+			new Thread(new UserThread("B6", 6)).start();
+			new Thread(new UserThread("C6", 6)).start();
+
+			new Thread(new UserThread("A7", 7)).start();
+			new Thread(new UserThread("B7", 7)).start();
+			new Thread(new UserThread("C7", 7)).start();
+
+			new Thread(new UserThread("A8", 8)).start();
+			new Thread(new UserThread("B8", 8)).start();
+			new Thread(new UserThread("C8", 8)).start();
+
+			new Thread(new UserThread("A9", 9)).start();
+			new Thread(new UserThread("B9", 9)).start();
+			new Thread(new UserThread("C9", 9)).start();
+
+			new Thread(new UserThread("A10", 10)).start();
+			new Thread(new UserThread("B10", 10)).start();
+			new Thread(new UserThread("C10", 10)).start();
+
+			
 			while(true)
 			{
 				if(Thread.activeCount() == 1) break;

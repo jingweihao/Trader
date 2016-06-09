@@ -63,17 +63,22 @@ public class Service
 		return gs.RegisterService(user);
 	}
 	
-	public String get_Hello1(String person)
+	public String get_Hello1(String person, int ith)
 	{
 		System.out.println("Get_Hello1~~~~~~~~~~~");
-		return gs.Hello1Service(person);
+		return gs.Hello1Service(person, ith);
 	}
 	
-	public String get_Hello2(String person)
+	public ArrayList<SearchResult> get_TestSearch(String keyword, int ith)
 	{
-		System.out.println("Get_Hello2~~~~~~~~~~~");
-		return gs.Hello2Service(person);
+		System.out.println("Get_TestSearch~~~~~~~~~~");
+		return gs.TestSearch(keyword, ith);
 	}
 	
+	public ArrayList<Sales> get_TestSales(String username, int ith)
+	{
+		System.out.println("Get_TestSales~~~~~~~~~");
+		return gs.TestSales(username, ith);
+	}
 	
 }
