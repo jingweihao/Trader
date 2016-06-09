@@ -3,6 +3,8 @@ package com.action;
 import java.util.*;
 
 import org.apache.struts2.interceptor.SessionAware;
+
+import com.data.User;
 import com.getService.Service;
 import com.opensymphony.xwork2.Action;
 
@@ -36,7 +38,9 @@ public class SoldAction implements Action, SessionAware
 	public String execute() throws Exception 
 	{
 		System.out.println("item: " + category + "/" + itemname + "/" + itemid + "  has sold out!");
-		boolean flag = Service.getInstance().get_DeleteItem(category, itemname, itemid);
+		User user = (User)sessionmap.get(".user");
+		String sellername = user.getUsername();
+		boolean flag = Service.getInstance().get_DeleteItem(category, itemname, itemid, sellername);
 		if(flag)
 			System.out.println("Sold out successfully!");
 		else

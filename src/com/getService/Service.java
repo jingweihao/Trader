@@ -45,10 +45,10 @@ public class Service
 		return gs.AddItemService(sales);
 	}
 	
-	public boolean get_DeleteItem(String category, String itemname, String itemid)
+	public boolean get_DeleteItem(String category, String itemname, String itemid, String sellername)
 	{
 		System.out.println("Get_DeleteItem~~~~~~~~~");
-		return gs.DeleteItemService(category, itemname, itemid);
+		return gs.DeleteItemService(category, itemname, itemid, sellername);
 	}
 	
 	public User get_Verify(User user)
@@ -62,5 +62,18 @@ public class Service
 		System.out.println("Get_Register~~~~~~~~~");
 		return gs.RegisterService(user);
 	}
+	
+	public String get_Hello1(String person)
+	{
+		System.out.println("Get_Hello1~~~~~~~~~~~");
+		return gs.Hello1Service(person);
+	}
+	
+	public String get_Hello2(String person)
+	{
+		System.out.println("Get_Hello2~~~~~~~~~~~");
+		return gs.Hello2Service(person);
+	}
+	
 	
 }

@@ -7,7 +7,7 @@ import com.data.User;
 
 public class Test 
 {
-	private final static boolean flag = false;
+	private final static boolean flag = true;
 	private static Service s;
 	
 	public static void main(String[] args)
@@ -17,7 +17,7 @@ public class Test
 		if(!flag)
 		{
 			ArrayList<User> users = new ArrayList<User>();
-			for(int i = 1; i <= 100; i++)
+			for(int i = 1; i <= 3; i++)
 			{
 				User user = new User();
 				user.setUsername("user" + i);
@@ -25,8 +25,8 @@ public class Test
 				user.setPassword("123");
 				user.setConfirmpassword("123");
 				users.add(user);
-				s.get_Register(user);
-				System.out.println("Register user " + i);
+				boolean b = s.get_Register(user);
+				System.out.println("Register user " + i + "  Result: " + b);
 			}
 			
 			for(int i = 0; i < users.size(); i++)
@@ -40,13 +40,28 @@ public class Test
 			}
 
 		}
+		else
+		{
+			long before = System.currentTimeMillis();
+			new Thread(new UserThread("A1")).start();
+			new Thread(new UserThread("B1")).start();
+			//new Thread(new UserThread("A2")).start();
+			//new Thread(new UserThread("B2")).start();
+			//new Thread(new UserThread("A3")).start();
+			//new Thread(new UserThread("B3")).start();
+			//new Thread(new UserThread("A4")).start();
+			while(true)
+			{
+				if(Thread.activeCount() == 1) break;
+			}
+			System.out.println("final active acounts: " + Thread.activeCount());
+			long after = System.currentTimeMillis();
+			long time = after - before;
+			System.out.println("time : " + time);
+
+		}
 		
-		//long before = System.currentTimeMillis();
-		new Thread(new UserThread("A")).start();
-		new Thread(new UserThread("B")).start();
-		//long after = System.currentTimeMillis();
-		//long time = after - before;
-		//System.out.println("time : " + time);
+		
 		
 		
 		
