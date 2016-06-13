@@ -3,6 +3,7 @@ package com.getService;
 import java.util.*;
 
 import com.data.Sales;
+import com.data.SearchResult;
 import com.data.User;
 
 public class Test 
@@ -17,7 +18,7 @@ public class Test
 		if(!flag)
 		{
 			ArrayList<User> users = new ArrayList<User>();
-			for(int i = 1; i <= 3; i++)
+			for(int i = 1; i <= 100; i++)
 			{
 				User user = new User();
 				user.setUsername("user" + i);
@@ -42,56 +43,65 @@ public class Test
 		}
 		else
 		{
-			long before = System.currentTimeMillis();
-			new Thread(new UserThread("A1", 1)).start();
-			new Thread(new UserThread("B1", 1)).start();
-			new Thread(new UserThread("C1", 1)).start();
-
-			new Thread(new UserThread("A2", 2)).start();
-			new Thread(new UserThread("B2", 2)).start();
-			new Thread(new UserThread("C2", 2)).start();
-
-			new Thread(new UserThread("A3", 3)).start();
-			new Thread(new UserThread("B3", 3)).start();
-			new Thread(new UserThread("C3", 3)).start();
-
-			new Thread(new UserThread("A4", 4)).start();
-			new Thread(new UserThread("B4", 4)).start();
-			new Thread(new UserThread("C4", 4)).start();
-			
-			new Thread(new UserThread("A5", 5)).start();
-			new Thread(new UserThread("B5", 5)).start();
-			new Thread(new UserThread("C5", 5)).start();
-
-			new Thread(new UserThread("A6", 6)).start();
-			new Thread(new UserThread("B6", 6)).start();
-			new Thread(new UserThread("C6", 6)).start();
-
-			new Thread(new UserThread("A7", 7)).start();
-			new Thread(new UserThread("B7", 7)).start();
-			new Thread(new UserThread("C7", 7)).start();
-
-			new Thread(new UserThread("A8", 8)).start();
-			new Thread(new UserThread("B8", 8)).start();
-			new Thread(new UserThread("C8", 8)).start();
-
-			new Thread(new UserThread("A9", 9)).start();
-			new Thread(new UserThread("B9", 9)).start();
-			new Thread(new UserThread("C9", 9)).start();
-
-			new Thread(new UserThread("A10", 10)).start();
-			new Thread(new UserThread("B10", 10)).start();
-			new Thread(new UserThread("C10", 10)).start();
-
-			
-			while(true)
+			long total = 0;
+			for(int i = 0; i < 10; i++)
 			{
-				if(Thread.activeCount() == 1) break;
+				System.out.println("Round " + i);
+				long before = System.currentTimeMillis();
+				new Thread(new UserThread("A1", 1)).start();
+				new Thread(new UserThread("B1", 1)).start();
+				new Thread(new UserThread("C1", 1)).start();
+
+				new Thread(new UserThread("A2", 2)).start();
+				new Thread(new UserThread("B2", 2)).start();
+				new Thread(new UserThread("C2", 2)).start();
+
+				new Thread(new UserThread("A3", 3)).start();
+				new Thread(new UserThread("B3", 3)).start();
+				new Thread(new UserThread("C3", 3)).start();
+
+				new Thread(new UserThread("A4", 4)).start();
+				new Thread(new UserThread("B4", 4)).start();
+				new Thread(new UserThread("C4", 4)).start();
+				
+				new Thread(new UserThread("A5", 5)).start();
+				new Thread(new UserThread("B5", 5)).start();
+				new Thread(new UserThread("C5", 5)).start();
+
+				new Thread(new UserThread("A6", 6)).start();
+				new Thread(new UserThread("B6", 6)).start();
+				new Thread(new UserThread("C6", 6)).start();
+
+				new Thread(new UserThread("A7", 7)).start();
+				new Thread(new UserThread("B7", 7)).start();
+				new Thread(new UserThread("C7", 7)).start();
+
+				new Thread(new UserThread("A8", 8)).start();
+				new Thread(new UserThread("B8", 8)).start();
+				new Thread(new UserThread("C8", 8)).start();
+
+				new Thread(new UserThread("A9", 9)).start();
+				new Thread(new UserThread("B9", 9)).start();
+				new Thread(new UserThread("C9", 9)).start();
+
+				new Thread(new UserThread("A10", 10)).start();
+				new Thread(new UserThread("B10", 10)).start();
+				new Thread(new UserThread("C10", 10)).start();
+
+				
+				while(true)
+				{
+					if(Thread.activeCount() == 1) break;
+				}
+				System.out.println("final active acounts: " + Thread.activeCount());
+				long after = System.currentTimeMillis();
+				long time = after - before;
+				total += time;
+				System.out.println("time : " + time);
+				
 			}
-			System.out.println("final active acounts: " + Thread.activeCount());
-			long after = System.currentTimeMillis();
-			long time = after - before;
-			System.out.println("time : " + time);
+			System.out.println("Total time: " + total);
+			System.out.println("Average time: " + total / 10);
 
 		}
 		

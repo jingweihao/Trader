@@ -35,7 +35,7 @@ public class UserThread implements Runnable
         	}
         	else
         	{
-            	ArrayList<Sales> list = s.get_TestSales("user1", ith);
+            	ArrayList<Sales> list = s.get_TestSales("user2", ith);
             	System.out.println(name + " has " + list.size() + " results");        		
         	}
 //        	if(name.isEmpty() == false)

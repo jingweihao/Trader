@@ -47,6 +47,7 @@ public class LoginAction implements Action, SessionAware
 		
 		sessionmap.put(".user", getUser());
 		ArrayList<Sales> list = s.get_Sales(user.getUsername());
+		System.out.println("Personal Sales for : " + user.getUsername());
 
 		if(list == null)
 			System.out.println("null~~~~~~~~~~~~");
@@ -59,7 +60,7 @@ public class LoginAction implements Action, SessionAware
 		{
 			for(Sales item : list)
 			{
-				System.out.println("itttem!!!!");
+				System.out.println("itemm!!: " + item.getName());
 				sessionmap.put(item.getId(), item);
 			}
 		}
